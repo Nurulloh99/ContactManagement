@@ -21,14 +21,8 @@ namespace ContactSystem.Server
             builder.Services.AddSwaggerGen();
 
 
-
-
             builder.Configuration();
             builder.Services.ConfigureDependecies();
-
-
-
-
 
 
             var app = builder.Build();

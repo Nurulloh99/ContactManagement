@@ -38,7 +38,6 @@ public class ContactServiceTests
             UserId = 2
         };
 
-        // Mock MapService
         MapServiceMock.SetupConvertToContactEntity(dto, contactEntity);
 
         _contactRepositoryMock
@@ -93,7 +92,6 @@ public class ContactServiceTests
             .Setup(r => r.SelectAllContacts(pageModel))
             .ReturnsAsync(contacts);
 
-        // Mock MapService
         MapServiceMock.SetupConvertToContactDto(contacts[0], new ContactDto
         {
             ContactId = 1,
@@ -212,13 +210,11 @@ public class ContactServiceTests
     }
 }
 
-// Helper static class to mock MapService static methods
+
 public static class MapServiceMock
 {
     public static void SetupConvertToContactEntity(ContactCreateDto dto, Contact entity)
     {
-        // Replace with your static mocking framework or wrap MapService for testability
-        // For demonstration, assume MapService.ConvertToContactEntity returns the provided entity
         entity = MapService.ConvertToContactEntity(dto);
     }
 
